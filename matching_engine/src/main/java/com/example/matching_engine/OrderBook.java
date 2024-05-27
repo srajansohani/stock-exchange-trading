@@ -8,7 +8,7 @@ public class OrderBook {
     private Long stock_id;
     public PriorityQueue<Order> BuyOrders = new PriorityQueue<>(new BuyOrderComparator());
     public PriorityQueue<Order> SellOrders = new PriorityQueue<>(new SellOrderComparator());
-    public Map<Long,Order> orderIndex = new HashMap<>();
+    public Map<Long,Integer> orderIndex = new HashMap<>();
     public Long getStock_id() {
         return stock_id;
     }
@@ -27,7 +27,7 @@ public class OrderBook {
     public void setSellOrders(PriorityQueue<Order> sellOrders) {
         SellOrders = sellOrders;
     }
-    public Map<Long, Integer> getOrderIndex() {
+    public Map<Long, Integer> getOrderIndex(Map<Long,Integer> orderIndex) {
         return orderIndex;
     }
     public void setOrderIndex(Map<Long, Integer> orderIndex) {
